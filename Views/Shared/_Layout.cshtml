@@ -61,6 +61,13 @@
                         </li>
                     </ul>
                 </div>
+
+               <i class="nav-item">
+                    <a class="nav-link" asp-controller="Cart" asp-action="Index">
+                        <i class="fas fa-shopping-cart"></i> View Cart
+                    </a>
+               </i>
+
                 @if (User?.Identity?.IsAuthenticated ?? false)
                 {
                     <a class="signInOut mr-2" asp-controller="Account" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
@@ -69,7 +76,10 @@
                 {
                     <a class="signInOut mr-2" asp-controller="Account" asp-action="Login"><i class="fas fa-sign-in-alt"></i> Sign In</a>
                 }
+
+                
             </div>
+           
         </nav>
     </header>
     <div class="container">

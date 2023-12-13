@@ -5,6 +5,7 @@ $(function () {
     $.getJSON({
       url: `../../api/category/${$('#product_rows').data('id')}/product` + discontinued,
       success: function (response, textStatus, jqXhr) {
+        console.log('Returned from API');
         $('#product_rows').html("");
           for (var i = 0; i < response.length; i++){
             var css = response[i].discontinued ? " class='discontinued'" : "";

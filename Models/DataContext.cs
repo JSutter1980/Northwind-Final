@@ -54,4 +54,19 @@ public class DataContext : DbContext
     cartItem.Product = Products.Find(cartItem.ProductId);
     return cartItem;
   }
+
+  public void deleteItem(CartItem cartItem)
+  {
+    this.Remove(cartItem);
+    this.SaveChanges();
+  }
+
+  public void RemoveFromCart(int id)
+        {
+            CartItem cartItem = CartItems.FirstOrDefault(ci => ci.CartItemId == id);
+            CartItems.Remove(cartItem);
+            SaveChanges();
+        }
+
+  
 }
